@@ -1,16 +1,42 @@
+* {
+  outline: red 1px solid;
+} 
+
 html {
   width: 100%;
   height: 100%;
   background-color: #66000D;
 }
 
+body {
+  width: 90%;
+  height: 96%;
+  margin: 1em auto;
+  padding-top:2em;
+  background-color:#fff;
+  font-family: 'Shadows Into Light', cursive;
+  text-align: center;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+
+/*Start adding the game instruction styles*/
 .blackOut {
   position: absolute;
   background-color: black;
   opacity: 0.9;
-  text-align: center;
+  text-align: center; 
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
   border-radius: 1em;
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3); 
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+
 }
 
 #MJinstructions {
@@ -20,26 +46,24 @@ html {
   height: 96%;
   z-index:1000;
   display:none;
+  color:white;
 }
-#instructionsbutton {
-  z-index:1001;
-  position: relative;
+#MJinstructions>ul {
+  margin: 9em 2em;
+  text-align: left;
+  line-height: 1.7em;
+  font-size: 3em;
 }
-body {
-  width: 90%;
-  height: 96%;
-  margin: 1em auto;
-  padding-top:2em;
-	background-color:#fff;
-	font-family: 'Shadows Into Light', cursive;
-  text-align: center;
-  -webkit-border-radius: 1em;
-  -moz-border-radius: 1em;
-  border-radius: 1em;
-  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+
+#difficulties {
+  margin: 0 0 0 1em;
 }
+
+strong {
+  font-size:1.25em;
+}
+
+/*this will contain styles for header section*/
 #mjTitle {
   background-image: url('../images/memoryJukebox.png');
   height: 10em;
@@ -50,7 +74,37 @@ body {
   margin-right: auto;
   margin-top: 2em;
   margin-bottom: 1em;
+  z-index:1001;
+  position: relative;
 }
+
+
+.bigbutton {
+  margin-top: 1.25rem;
+  background-color: #A60015;
+  width: 30%;
+  color: white;
+  text-align: center;
+  border-radius: 0.5em;
+  text-shadow: 0px 0px 7px #EAE217;
+  border: 4px solid #66000D;
+  padding: 1em 1.5em;
+  font-size: 2rem;
+  line-height: 1.33;
+}
+
+#instructionsbutton {
+  z-index:1001;
+  position: relative;
+  width: 20%;
+}
+#playbutton{
+  width: 50%;
+}
+#diffbutton {
+  width: 20%;
+}
+/*This will contain styles for Display Section*/
 #messageBox {
   font-size: 3em;
   font-family: 'Shadows Into Light', cursive;
@@ -68,23 +122,6 @@ body {
   margin-top: 2em;
   margin-bottom: 1em;
 }
-
-.bigbutton {
-  margin-top: 1.25rem;
-  background-color: #A60015;
-  width: 30%;
-  color: white;
-  text-align: center;
-  border-radius: 0.5em;
-  text-shadow: 0px 0px 7px #EAE217;
-  border: 4px solid #66000D;
-  padding: 1em 1.5em;
-  font-size: 2rem;
-  line-height: 1.33;
-}
-* {
-  outline: red 1px solid;
-} 
 
 /* old code for help
 

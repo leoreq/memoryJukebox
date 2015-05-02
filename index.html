@@ -12,15 +12,26 @@
 <body>
 	<!--has the black screen with information on how to play-->
 	<div class="blackOut" id="MJinstructions">
-  	
+  		<ul>
+  			<li><p><strong>[1]</strong> SELECT DIFICULTY (DIFF):</p>
+	  			<ul id="difficulties">
+	  				<li><p> NORMAL : Hear 15 seconds of a chorus</p></li>
+	  				<li><p> GROOPIE: Hear first 15 seconds of the song.</p></li>
+	  			</ul>
+  				
+  			</li>
+  			<li><p><strong>[2]</strong> PLAY: Press PLAY to start the game</p></li>
+  			<li><p><strong>[3]</strong> LISTEN: A record will play for 15 seconds</p></li>
+  			<li><p><strong>[4]</strong> GUESS: Select the ARTIST/SONG combination you think is playing.</p></li>
+  		</ul>
 	</div>
 	<!--has to hold title image and buttons-->
 	<header class="headerBar">
 		<div id="mjTitle"></div>
 		<nav id="mjButtons">
 			<button class="bigbutton" id="instructionsbutton"> ? </button>
-			<button class="bigbutton"> PLAY </button>
-			<button class="bigbutton"> Difficulty </button>
+			<button class="bigbutton" id="playbutton"> PLAY </button>
+			<button class="bigbutton" id="diffbutton"> DIFF </button>
 		</nav>
 	</header>
 
@@ -34,6 +45,7 @@
 	<section class="choicesSection">
 		
 	</section>
+	
 
 	<!--Need to adapt this to hold the 5 songs.-->
 		
