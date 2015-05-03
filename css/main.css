@@ -1,7 +1,7 @@
-* {
+/* {
   outline: red 1px solid;
 } 
-
+*/
 html {
   width: 100%;
   height: 100%;
@@ -9,11 +9,12 @@ html {
 }
 
 body {
+  position: absolute;
   width: 90%;
-  height: 96%;
-  margin: 1em auto;
-  padding-top:2em;
-  background-color:#fff;
+  min-height: 96%;
+  margin: 1em 3em;
+  padding-top: 2em;
+  background-color: #fff;
   font-family: 'Shadows Into Light', cursive;
   text-align: center;
   -webkit-border-radius: 1em;
@@ -42,12 +43,16 @@ body {
 #MJinstructions {
   font-family: 'Shadows Into Light', cursive;
   margin-top: -2em;
-  width: 90%;
-  height: 96%;
+  width: 100%;
+  height: 100%;
   z-index:1000;
   display:none;
   color:white;
 }
+.explanation {
+  margin: 1em auto;
+}
+
 #MJinstructions>ul {
   margin: 9em 2em;
   text-align: left;
@@ -60,7 +65,8 @@ body {
 }
 
 strong {
-  font-size:1.25em;
+  font-size:1.1em;
+  font-weight:900;
 }
 
 /*this will contain styles for header section*/
@@ -133,9 +139,36 @@ strong {
   margin: 1em;
   line-height: 1.3em;
   text-align: left;
-  color: red;
+  color: #A60015;
   font-weight: 900;
   text-transform: uppercase;
+}
+
+/*This will contain the stryles for the Collection Section*/
+
+.collectionSection {
+  height:100%;
+}
+.recordPrize {
+  background-image: url('../images/recordRHCP.jpg');
+  float:left;
+  height: 22em;
+  background-repeat: no-repeat;
+  background-size:contain;
+  width: 40%;
+  margin: 1em;
+}
+.detailPrize{
+  float: right;
+  height: 100%;
+  width: 40%;
+  font-size: 3em;
+  font-family: 'Shadows Into Light',cursive;
+  margin: 2em 1em;
+  line-height: 1.3em;
+  text-align: left;
+  color: #A60015;
+  font-weight: 900;
 }
 /* old code for help
 

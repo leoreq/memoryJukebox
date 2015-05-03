@@ -13,6 +13,7 @@
 	<!--has the black screen with information on how to play-->
 	<div class="blackOut" id="MJinstructions">
   		<ul>
+  			<!--li><h1 class="explanation">This is a game where you will test how well you know 90's hits. You will listen to 5 sings and select your best choice.</h1></li-->
   			<li><p><strong>[1]</strong> SELECT DIFICULTY (DIFF):</p>
 	  			<ul id="difficulties">
 	  				<li><p> NORMAL : Hear 15 seconds of a chorus</p></li>
@@ -23,6 +24,7 @@
   			<li><p><strong>[2]</strong> PLAY: Press PLAY to start the game</p></li>
   			<li><p><strong>[3]</strong> LISTEN: A record will play for 15 seconds</p></li>
   			<li><p><strong>[4]</strong> GUESS: Select the ARTIST/SONG combination you think is playing.</p></li>
+  			<!--li><h1 class="explanation"> If correct you will be rewarded a disc for your collection !!! </h1></li-->
   		</ul>
 	</div>
 	<!--has to hold title image and buttons-->
@@ -43,7 +45,7 @@
 
 	<!--has to hold alternatives for selection-->
 	<section class="choicesSection">
-		<h1 class="subTitle">Choose the song you think is playing</h1>
+		<h1 class="subTitle"><strong>Choose</strong> the song you think is playing</h1>
 		<ul>
 			<li><button class="bigbutton" id="Option1"> Option 1 </button></li>
 			<li><button class="bigbutton" id="Option2"> Option 2 </button></li>
@@ -52,8 +54,15 @@
 			<li><button class="bigbutton" id="Option5"> Option 5 </button></li>
 		</ul>
 	</section>
-	
-
+	<!--has to hold prizes collected so far-->
+	<section class="collectionSection">
+		<h1 class="subTitle"><strong>Collection</strong></h1>
+		<div class="recordPrize"></div>
+		<ul class="detailPrize">
+			<li><h2><strong>SONG:</strong>Track</h2></li>
+			<li><h2><strong>ARTIST:</strong>ArtistName</h2></li>
+		</ul>
+	</section>
 	<!--Need to adapt this to hold the 5 songs.-->
 		
 	<audio id="hadouken-sound" src="sound/hadouken.mp3">
