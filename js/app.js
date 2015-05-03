@@ -1,6 +1,6 @@
 //quiz question array that will be global variables
     var questions = [{
-        song: "sound/hadouken.mp3",
+        song: "#BYTHEWAY",
         choices: ["Got the Life : KoRN", "Crawling : Linkin Park", "By The Way : Red hot Chilli Peppers", "Nookie : Limp Bizkit"],
         qNum : 0,
         correct : "By The Way : Red hot Chilli Peppers",
@@ -43,8 +43,9 @@ $("#mjButtons").on("click", "#playbutton", function () {
         $(".choicesSection").css("display", "inline");
         $(".collectionSection").css("display", "inline");
         //update question info
-        playHadouken ();
         update();
+        console.log(songPlayer(questions[0].song));
+        songPlayer(questions[0].song);
         //var newQuestion = '<span class="question">'+questions[currentQuestion].question+'</span><br><div id="answer_holder"><input type="radio" name="option" class="option" value="0"><span class="answer">'+questions[currentQuestion].choices[0]+'</span><br><input type="radio" name="option" class="option" value="1"><span class="answer">'+questions[currentQuestion].choices[1]+'</span><br><input type="radio" name="option" class="option" value="2"><span class="answer">'+questions[currentQuestion].choices[2]+'</span><br><input type="radio" name="option" class="option" value="3"><span class="answer">'+questions[currentQuestion].choices[3]+'</span><br></div><div id="button_holder"><input type="button" id="submit" value="Submit Answer"><span id="hint"></span><input type="button" id="retry_button" value="Try Again!"></div>';
         //$("#question_wrapper").html(newQuestion);
         //$("#last_question_fact").html("");
@@ -55,4 +56,10 @@ function playHadouken () {
 	$('#hadouken-sound')[0].volume = 0.5;
 	$('#hadouken-sound')[0].load();
 	$('#hadouken-sound')[0].play();
+}
+
+function songPlayer (tag) {
+	$(tag)[0].volume = 0.5;
+	$(tag)[0].load();
+	$(tag)[0].play();
 }
