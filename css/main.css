@@ -118,7 +118,7 @@ strong {
   line-height: 1.3em;
 }
 #recordPlayer {
-  background-image: url('../images/player.jpg');
+  background-image: url('../images/player.JPG');
   height: 31em;
   background-repeat: no-repeat;
   background-size:contain;
@@ -150,7 +150,7 @@ strong {
   height:100%;
 }
 .recordPrize {
-  background-image: url('../images/recordRHCP.jpg');
+  background-image: url('../images/recordRHCP.JPG');
   float:left;
   height: 22em;
   background-repeat: no-repeat;
