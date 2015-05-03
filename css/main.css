@@ -82,7 +82,7 @@ strong {
 .bigbutton {
   margin-top: 1.25rem;
   background-color: #A60015;
-  width: 30%;
+  width: 70%;
   color: white;
   text-align: center;
   border-radius: 0.5em;
@@ -122,7 +122,21 @@ strong {
   margin-top: 2em;
   margin-bottom: 1em;
 }
+/*This will contain the stryles for the Choices Section*/
 
+.choicesSection {
+  height:100%;
+}
+.subTitle{
+  font-size: 2em;
+  font-family: cursive;
+  margin: 1em;
+  line-height: 1.3em;
+  text-align: left;
+  color: red;
+  font-weight: 900;
+  text-transform: uppercase;
+}
 /* old code for help
 
 .main {
