@@ -132,6 +132,7 @@ strong {
 
 .choicesSection {
   height:100%;
+  display:none;
 }
 .subTitle{
   font-size: 2em;
@@ -148,6 +149,7 @@ strong {
 
 .collectionSection {
   height:100%;
+  display:none;
 }
 .recordPrize {
   background-image: url('../images/recordRHCP.JPG');
