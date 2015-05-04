@@ -62,4 +62,5 @@ function songPlayer (tag) {
 	$(tag)[0].volume = 0.5;
 	$(tag)[0].load();
 	$(tag)[0].play();
+	console.log($(tag)+" was played");
 }
