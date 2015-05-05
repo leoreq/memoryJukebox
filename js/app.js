@@ -12,6 +12,7 @@
 //Update function to be run after every iteration to update questions 
 function update() {
 	$('#messageBox').text('Let the games begin');
+	$("#recordPlayer").css("background-image", "url('./images/player.JPG')");
 	$(".prizeSection").css("display", "none");
 	$(".choicesSection ul li").remove();
 	$('.displaySection audio').remove();
