@@ -2,7 +2,7 @@
     var questions = [{
         song: "ByTheWay",
         file:"sound/ByTheWay.mp3",
-        image:"url('./images/RHCPband.JPG')",
+        image:"url('./images/RHCPband.jpg')",
         choices:['Red Hot Chili Peppers – “By The Way”','Metallica – “Enter Sandman”','Beastie Boys – “Sabotage”','Beck – “Loser”','Soundgarden – “Black Hole Sun”'],
         qNum : 0,
         correct : 'Red Hot Chili Peppers – “By The Way”',
