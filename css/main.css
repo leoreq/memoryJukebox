@@ -146,8 +146,12 @@ strong {
 }
 
 /*This will contain the stryles for the Collection Section*/
-
-.collectionSection {
+#recordHolder, #prizeHolder{
+  max-width: 41em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.collectionSection ,.prizeSection {
   height:100%;
   display:none;
 }
@@ -157,20 +161,21 @@ strong {
   height: 22em;
   background-repeat: no-repeat;
   background-size:contain;
-  width: 40%;
-  margin: 1em;
+  width: 34%;
+  margin: 1em 2em;
+}
+.prizeContainer {
+  float:right;
+  height: 22em;
+  width: 46%;
+  margin: 1em 2em;
 }
 .detailPrize{
-  float: right;
-  height: 100%;
-  width: 40%;
   font-size: 3em;
   font-family: 'Shadows Into Light',cursive;
-  margin: 2em 1em;
   line-height: 1.3em;
   text-align: left;
   color: #A60015;
-  font-weight: 900;
 }
 /* old code for help
 

@@ -2,31 +2,49 @@
     var questions = [{
         song: "ByTheWay",
         file:"sound/ByTheWay.mp3",
-        choices: ["Got the Life : KoRN", "Crawling : Linkin Park", "By The Way : Red hot Chilli Peppers", "Nookie : Limp Bizkit"],
+        image:"url('./images/RHCPband.JPG')",
+        choices:['Red Hot Chili Peppers – “By The Way”','Metallica – “Enter Sandman”','Beastie Boys – “Sabotage”','Beck – “Loser”','Soundgarden – “Black Hole Sun”'],
         qNum : 0,
-        correct : "By The Way : Red hot Chilli Peppers",
-        correctSong: "By The Way",
-        correctArtist: "Red Hot Chilli Peppers"
+        correct : 'Red Hot Chili Peppers – “By The Way”',
+        correctSong: "“By The Way”",
+        correctArtist: "Red Hot Chili Peppers"
         }]
 //Update function to be run after every iteration to update questions 
 function update() {
-$('#messageBox').text('Let the games begin');
-$(".choicesSection ul li").remove();
-console.log('<audio id="'+questions[0].song+'" controls src="' + questions[0].file + '"></audio>');
-$('.displaySection')
-                .append('<audio id="'+questions[0].song+'" controls src="' + questions[0].file + '"></audio>');		
+	$('#messageBox').text('Let the games begin');
+	$(".prizeSection").css("display", "none");
+	$(".choicesSection ul li").remove();
+	$('.displaySection audio').remove();
+	$('.displaySection').append('<audio id="'+questions[0].song+'" controls src="' + questions[0].file + '"></audio>');		
+	for(var i = 0; i < questions[0].choices.length; i++)
+		{
+	        //console.log("DEBUG:the option "+questions[0].choices[i]+" compared with "+questions[0].correct+"will be "+(questions[0].choices[i]==questions[0].correct)+" ");
+	        bstatus="INCORRECT";
+	        if (questions[0].choices[i]==questions[0].correct)
+	        {bstatus="CORRECT"  }
+	        else {bstatus="INCORRECT"};
+	        $('.choicesSection')
+	        .find('ul')
+	        .prepend('<li><button class="bigbutton" id="'+bstatus+'">' + questions[0].choices[i] + '</button></li>')		
+	    };
+	}
 
-for(var i = 0; i < questions[0].choices.length; i++){
-                console.log("DEBUG:the option "+questions[0].choices[i]+" compared with "+questions[0].correct+"will be "+(questions[0].choices[i]==questions[0].correct)+" ");
-                bstatus="INCORRECT";
-                if (questions[0].choices[i]==questions[0].correct)
-                {bstatus="CORRECT"  }
-                else {bstatus="INCORRECT"};
-                $('.choicesSection')
-                .find('ul')
-                .prepend('<li><button class="bigbutton" id="'+bstatus+'">' + questions[0].choices[i] + '</button></li>')		
-            };
+
+function Prize() {
+	$('#messageBox').css("display", "none");
+	$('#messageBox').text('CORRECTOU!!!').fadeIn(3000);
+	$("#recordPlayer").css("display", "none");
+	$("#recordPlayer").css("background-image", questions[0].image).fadeIn(3000);
+	$('.displaySection audio').remove();
+	$(".choicesSection").css("display", "none");
+	//$('.collectionSection').find('ul li').remove();
+	$("#prizeHolder li").remove();
+	$('#prizeHolder').append('<li><div class="recordPrize"></div><div class="prizeContainer"><h2 class="detailPrize"><strong>SONG:</strong>' + questions[0].correctSong + '</h2><h2 class="detailPrize"><strong>ARTIST:</strong>' + questions[0].correctArtist + '</h2></div></li>');
+	$('.prizeSection').fadeIn(3000);
+	$('.collectionSection').find('ul').append('<li><div class="recordPrize"></div><div class="prizeContainer"><h2 class="detailPrize"><strong>SONG:</strong>' + questions[0].correctSong + '</h2><h2 class="detailPrize"><strong>ARTIST:</strong>' + questions[0].correctArtist + '</h2></div></li>');
+	$('.collectionSection').fadeIn(3000);
 }
+
 $(document).ready(function() {
 //actions that happen immediately after document is loaded
 
@@ -39,14 +57,13 @@ $('#instructionsbutton')
 	.click(function(){
     	$("#MJinstructions").toggle();})
 
-//Display the start of the game
+//GameStart Listener
 $("#mjButtons").on("click", "#playbutton", function () {
         //set the counters
         numberCorrect = 0;
         currentQuestion = 0;
         //remove previous game traits
         $(".choicesSection").css("display", "inline");
-        $(".collectionSection").css("display", "inline");
         //update question info
         update();
         musicTag="#"+questions[0].song+"";
@@ -56,13 +73,17 @@ $("#mjButtons").on("click", "#playbutton", function () {
         //$("#question_wrapper").html(newQuestion);
         //$("#last_question_fact").html("");
     });
+
+//CorrectAnswer Listener
+$(".choicesSection").on("click", "#CORRECT", function () {
+        //set the counters
+        numberCorrect += 1;
+        console.log("the answer is correct. Total correct answers are : "+numberCorrect);
+        //run Reward Program
+        Prize();
+    });
 });
 
-function playHadouken () {
-	$('#hadouken-sound')[0].volume = 0.5;
-	$('#hadouken-sound')[0].load();
-	$('#hadouken-sound')[0].play();
-}
 
 function songPlayer (tag) {
 	console.log(tag+" was played");
