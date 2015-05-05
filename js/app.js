@@ -1,5 +1,8 @@
 //quiz question array that will be global variables
-    var questions = [{
+    var questions = [
+    {correctArtist:'U2 ',correctSong:'“One”',file: "sound/one.wav",image: "url('./images/U2.jpg')",correct:'U2 – “One”',choices:['Nirvana – “Smells Like Teen Spirit”','U2 – “One”','R.E.M. – “Losing My Religion”','Pearl Jam – “Jeremy”','Alanis Morissette – “You Oughta Know”'],song:"One"}
+,
+    /*{
         song: "ByTheWay",
         file:"sound/ByTheWay.mp3",
         image:"url('./images/RHCPband.jpg')",
@@ -8,7 +11,11 @@
         correct : 'Red Hot Chili Peppers – “By The Way”',
         correctSong: "“By The Way”",
         correctArtist: "Red Hot Chili Peppers"
-        }]
+        },
+	*/
+{correctArtist:'Red Hot Chili Peppers ',correctSong:'“By The Way”',file:"sound/ByTheWay.mp3",image: "url('./images/RHCPband.jpg')",correct:'Red Hot Chili Peppers – “By The Way”',choices:['Red Hot Chili Peppers – “By The Way”','Metallica – “Enter Sandman”','Beastie Boys – “Sabotage”','Beck – “Loser”','Soundgarden – “Black Hole Sun”'],song:"ByTheWay"}
+
+        ]
 //Update function to be run after every iteration to update questions 
 function update() {
 	$('#messageBox').text('Let the games begin');
