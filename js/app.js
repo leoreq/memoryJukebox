@@ -1,6 +1,6 @@
 //quiz question array that will be global variables
     var questions = [
-    {correctArtist:'U2 ',correctSong:'“One”',file: "sound/One.wav",image: "url('./images/U2.jpg')",correct:'U2 – “One”',choices:['Nirvana – “Smells Like Teen Spirit”','U2 – “One”','R.E.M. – “Losing My Religion”','Pearl Jam – “Jeremy”','Alanis Morissette – “You Oughta Know”'],song:"One"}
+    {correctArtist:'U2 ',correctSong:'“One”',file: "sound/One.wav",image: "url('./images/U2.jpg')",correct:'U2 – “One”',choices:['Nirvana – “Smells Like Teen Spirit”','U2 – “One”','R.E.M. – “Losing My Religion”','Pearl Jam – “Jeremy”','Alanis Morissette – “You Oughta Know”'],song:"One",prize: "url('./images/recordU2.jpg')"}
 ,
     /*{
         song: "ByTheWay",
@@ -13,7 +13,7 @@
         correctArtist: "Red Hot Chili Peppers"
         },
 	*/
-{correctArtist:'Red Hot Chili Peppers ',correctSong:'“By The Way”',file:"sound/ByTheWay.mp3",image: "url('./images/RHCPband.jpg')",correct:'Red Hot Chili Peppers – “By The Way”',choices:['Red Hot Chili Peppers – “By The Way”','Metallica – “Enter Sandman”','Beastie Boys – “Sabotage”','Beck – “Loser”','Soundgarden – “Black Hole Sun”'],song:"ByTheWay"}
+	{correctArtist:'Red Hot Chili Peppers ',correctSong:'“By The Way”',file:"sound/ByTheWay.mp3",image: "url('./images/RHCPband.jpg')",correct:'Red Hot Chili Peppers – “By The Way”',choices:['Red Hot Chili Peppers – “By The Way”','Metallica – “Enter Sandman”','Beastie Boys – “Sabotage”','Beck – “Loser”','Soundgarden – “Black Hole Sun”'],song:"ByTheWay"}
 
         ]
 //Update function to be run after every iteration to update questions 
@@ -47,9 +47,14 @@ function Prize() {
 	$(".choicesSection").css("display", "none");
 	//$('.collectionSection').find('ul li').remove();
 	$("#prizeHolder li").remove();
+	//prize will only change, so image displayed will be generic from class recordPrize
 	$('#prizeHolder').append('<li><div class="recordPrize"></div><div class="prizeContainer"><h2 class="detailPrize"><strong>SONG:</strong>' + questions[0].correctSong + '</h2><h2 class="detailPrize"><strong>ARTIST:</strong>' + questions[0].correctArtist + '</h2></div></li>');
+	$('.recordPrize').css("background-image", questions[0].prize);
 	$('.prizeSection').fadeIn(3000);
-	$('.collectionSection').find('ul').append('<li><div class="recordPrize"></div><div class="prizeContainer"><h2 class="detailPrize"><strong>SONG:</strong>' + questions[0].correctSong + '</h2><h2 class="detailPrize"><strong>ARTIST:</strong>' + questions[0].correctArtist + '</h2></div></li>');
+	//collections will change and be stored for further references, so a unique id is built for each div
+	$('.collectionSection').find('ul').append('<li><div class="recordPrize" id="prize'+questions[0].song+'"></div><div class="prizeContainer"><h2 class="detailPrize"><strong>SONG:</strong>' + questions[0].correctSong + '</h2><h2 class="detailPrize"><strong>ARTIST:</strong>' + questions[0].correctArtist + '</h2></div></li>');
+	$('#prize'+questions[0].song+'').css("background-image", questions[0].prize);
+
 	$('.collectionSection').fadeIn(3000);
 }
 
