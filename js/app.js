@@ -1,7 +1,9 @@
 //quiz question array that will be global variables
     var questions = [
-    {correctArtist:'U2 ',correctSong:'“One”',file: "sound/One.wav",image: "url('./images/U2.jpg')",correct:'U2 – “One”',choices:['Nirvana – “Smells Like Teen Spirit”','U2 – “One”','R.E.M. – “Losing My Religion”','Pearl Jam – “Jeremy”','Alanis Morissette – “You Oughta Know”'],song:"One",prize: "url('./images/recordU2.jpg')"}
+    {correctArtist:'Red Hot Chili Peppers ',correctSong:'“By The Way”',file:"sound/ByTheWay.mp3",image: "url('./images/RHCPband.jpg')",correct:'Red Hot Chili Peppers – “By The Way”',choices:['Red Hot Chili Peppers – “By The Way”','Metallica – “Enter Sandman”','Beastie Boys – “Sabotage”','Beck – “Loser”','Soundgarden – “Black Hole Sun”'],song:"ByTheWay"}
 ,
+    {correctArtist:'U2 ',correctSong:'“One”',file: "sound/One.wav",image: "url('./images/U2.jpg')",correct:'U2 – “One”',choices:['Nirvana – “Smells Like Teen Spirit”','U2 – “One”','R.E.M. – “Losing My Religion”','Pearl Jam – “Jeremy”','Alanis Morissette – “You Oughta Know”'],song:"One",prize: "url('./images/recordU2.jpg')"}
+
     /*{
         song: "ByTheWay",
         file:"sound/ByTheWay.mp3",
@@ -13,8 +15,7 @@
         correctArtist: "Red Hot Chili Peppers"
         },
 	*/
-	{correctArtist:'Red Hot Chili Peppers ',correctSong:'“By The Way”',file:"sound/ByTheWay.mp3",image: "url('./images/RHCPband.jpg')",correct:'Red Hot Chili Peppers – “By The Way”',choices:['Red Hot Chili Peppers – “By The Way”','Metallica – “Enter Sandman”','Beastie Boys – “Sabotage”','Beck – “Loser”','Soundgarden – “Black Hole Sun”'],song:"ByTheWay"}
-
+	
         ]
 //Update function to be run after every iteration to update questions 
 function update() {
