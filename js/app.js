@@ -87,6 +87,11 @@ console.log("ready");
 $('#instructionsbutton')
 	.click(function(){
     	$("#MJinstructions").toggle();})
+// DIFF Listener: Currently Disabled
+
+$("#diffbutton").click(function(){
+    alert("Current version only supports Groopie Method.");
+});
 
 //GameStart Listener 
 $("#mjButtons").on("click", "#playbutton", function () {
@@ -113,6 +118,8 @@ $(".prizeSection").on("click", "#nextButton", function () {
     	$(".prizeSection").css("display", "none");
     	$(".choicesSection").css("display", "none");
     	$("#recordPlayer").css("display", "none");
+    	$("#instructionsbutton").css("display", "none");
+    	$("#replaybutton").css("display", "inline");
     	//Show collection
     	$('#messageBox').text('END: Your final score is : '+numberCorrect+' out of 5 questions');
         $('.collectionSection').fadeIn(3000);
@@ -134,6 +141,12 @@ $(".choicesSection").on("click", "#INCORRECT", function () {
     //run noReward Program
     Wrong();
     });
+
+//replay game via page refresh
+$('#replaybutton').click(function() {
+    location.reload();
+	});
+
 });
 
 

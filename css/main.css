@@ -115,6 +115,10 @@ strong {
 #diffbutton {
   width: 20%;
 }
+#replaybutton{
+  width: 50;
+  display:none;
+}
 /*This will contain styles for Display Section*/
 #messageBox ,#messageBox2{
   font-size: 3em;
