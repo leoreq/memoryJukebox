@@ -1,14 +1,14 @@
 //quiz question array that will be global variables
     var questions = [
-    {correctArtist:'Red Hot Chili Peppers ',correctSong:'“By The Way”',file:"sound/ByTheWay.mp3",image: "url('./images/RHCPband.jpg')",correct:'Red Hot Chili Peppers – “By The Way”',choices:['Red Hot Chili Peppers – “By The Way”','Metallica – “Enter Sandman”','Beastie Boys – “Sabotage”','Beck – “Loser”','Soundgarden – “Black Hole Sun”'],song:"ByTheWay"}
+{correctArtist:'U2 ',correctSong:'“Elevation”',file: "sound/Elevation.mp3",image: "url('./images/U2.jpg')",correct:'U2 – “Elevation”',choices:['Nirvana – “Smells Like Teen Spirit”','U2 – “Elevation”','R.E.M. – “Losing My Religion”','Pearl Jam – “Jeremy”','Alanis Morissette – “You Oughta Know”'],song:"Elevation",prize: "url('./images/recordU2.jpg')"}
 ,
-    {correctArtist:'U2 ',correctSong:'“One”',file: "sound/One.wav",image: "url('./images/U2.jpg')",correct:'U2 – “One”',choices:['Nirvana – “Smells Like Teen Spirit”','U2 – “One”','R.E.M. – “Losing My Religion”','Pearl Jam – “Jeremy”','Alanis Morissette – “You Oughta Know”'],song:"One",prize: "url('./images/recordU2.jpg')"}
+{correctArtist:'Red Hot Chili Peppers ',correctSong:'“By The Way”',file:"sound/ByTheWay.mp3",image: "url('./images/RHCPband.jpg')",correct:'Red Hot Chili Peppers – “By The Way”',choices:['Red Hot Chili Peppers – “By The Way”','Metallica – “One”','Beastie Boys – “Sabotage”','Beck – “Loser”','Soundgarden – “Black Hole Sun”'],song:"ByTheWay",prize: "url('./images/recordRHCP.JPG')"}
 ,
- {correctArtist:'Metallica ',correctSong:'“Nothing Else Matters”',file: "sound/NothingElseMatters.wav",image: "url('./images/METALLICAband.jpg')",correct:'Metallica – “Nothing Else Matters”',choices:['Red Hot Chili Peppers – “By The Way”','Metallica – “Nothing Else Matters”','Beastie Boys – “Sabotage”','Beck – “Loser”','Soundgarden – “Black Hole Sun”'],song:"NothingElseMatters",prize: "url('./images/recordMETALLICA.jpg')"}
+{correctArtist:'Metallica ',correctSong:'“Nothing Else Matters”',file: "sound/NothingElseMatters.mp3",image: "url('./images/METALLICAband.jpg')",correct:'Metallica – “Nothing Else Matters”',choices:['Eminem – “My Name Is”','Counting Crows – “Mr. Jones”','Radiohead – “Creep”','Metallica – “Nothing Else Matters”','Oasis – “Wonderwall”'],song:"NothingElseMatters",prize: "url('./images/recordMETALLICA.jpg')"}
 ,
-   {correctArtist:'Metallica ',correctSong:'“Nothing Else Matters”',file: "sound/NothingElseMatters.wav",image: "url('./images/METALLICAband.jpg')",correct:'Metallica – “Nothing Else Matters”',choices:['Eminem – “My Name Is”','Counting Crows – “Mr. Jones”','Radiohead – “Creep”','Metallica – “Nothing Else Matters”','Oasis – “Wonderwall”'],song:"NothingElseMatters",prize: "url('./images/recordMETALLICA.jpg')"}
+{correctArtist:'Korn ',correctSong:'“Freak On A Leash”',file: "sound/FreakOnALeash.mp3",image: "url('./images/KORNband.jpg')",correct:'Korn – “Freak On A Leash”',choices:['Green Day – “Good Riddance (Time of Your Life)”','Goo Goo Dolls – “Iris”','Collective Soul – “Shine”','Korn – “Freak On A Leash”','Alice in Chains – “Man in the Box”'],song:"FreakOnALeash",prize: "url('./images/recordKORN.jpg')"}
 ,
-    {correctArtist:'U2 ',correctSong:'“One”',file: "sound/One.wav",image: "url('./images/U2.jpg')",correct:'U2 – “One”',choices:['Nirvana – “Smells Like Teen Spirit”','U2 – “One”','R.E.M. – “Losing My Religion”','Pearl Jam – “Jeremy”','Alanis Morissette – “You Oughta Know”'],song:"One",prize: "url('./images/recordU2.jpg')"}
+{correctArtist:'Blur ',correctSong:'“Song 2”',file: "sound/Song2.mp3",image: "url('./images/BLURband.jpg')",correct:'Blur – “Song 2”',choices:['Blur – “Song 2”','Sugar Ray – “Fly”','Weezer – “Buddy Holly”','Live – “I Alone”','Will Smith – “Gettin’ Jiggy Wit It”'],song:"Song2",prize: "url('./images/recordBLUR.jpg')"}
 
     /*{
         song: "ByTheWay",
