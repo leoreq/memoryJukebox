@@ -3,6 +3,12 @@
     {correctArtist:'Red Hot Chili Peppers ',correctSong:'“By The Way”',file:"sound/ByTheWay.mp3",image: "url('./images/RHCPband.jpg')",correct:'Red Hot Chili Peppers – “By The Way”',choices:['Red Hot Chili Peppers – “By The Way”','Metallica – “Enter Sandman”','Beastie Boys – “Sabotage”','Beck – “Loser”','Soundgarden – “Black Hole Sun”'],song:"ByTheWay"}
 ,
     {correctArtist:'U2 ',correctSong:'“One”',file: "sound/One.wav",image: "url('./images/U2.jpg')",correct:'U2 – “One”',choices:['Nirvana – “Smells Like Teen Spirit”','U2 – “One”','R.E.M. – “Losing My Religion”','Pearl Jam – “Jeremy”','Alanis Morissette – “You Oughta Know”'],song:"One",prize: "url('./images/recordU2.jpg')"}
+,
+ {correctArtist:'Metallica ',correctSong:'“Nothing Else Matters”',file: "sound/NothingElseMatters.wav",image: "url('./images/METALLICAband.jpg')",correct:'Metallica – “Nothing Else Matters”',choices:['Red Hot Chili Peppers – “By The Way”','Metallica – “Nothing Else Matters”','Beastie Boys – “Sabotage”','Beck – “Loser”','Soundgarden – “Black Hole Sun”'],song:"NothingElseMatters",prize: "url('./images/recordMETALLICA.jpg')"}
+,
+   {correctArtist:'Metallica ',correctSong:'“Nothing Else Matters”',file: "sound/NothingElseMatters.wav",image: "url('./images/METALLICAband.jpg')",correct:'Metallica – “Nothing Else Matters”',choices:['Eminem – “My Name Is”','Counting Crows – “Mr. Jones”','Radiohead – “Creep”','Metallica – “Nothing Else Matters”','Oasis – “Wonderwall”'],song:"NothingElseMatters",prize: "url('./images/recordMETALLICA.jpg')"}
+,
+    {correctArtist:'U2 ',correctSong:'“One”',file: "sound/One.wav",image: "url('./images/U2.jpg')",correct:'U2 – “One”',choices:['Nirvana – “Smells Like Teen Spirit”','U2 – “One”','R.E.M. – “Losing My Religion”','Pearl Jam – “Jeremy”','Alanis Morissette – “You Oughta Know”'],song:"One",prize: "url('./images/recordU2.jpg')"}
 
     /*{
         song: "ByTheWay",
@@ -24,44 +30,59 @@ function update() {
 	$(".prizeSection").css("display", "none");
 	$(".choicesSection ul li").remove();
 	$('.displaySection audio').remove();
-	$('.displaySection').append('<audio id="'+questions[0].song+'" controls src="' + questions[0].file + '"></audio>');		
-	musicTag="#"+questions[0].song+"";
+	$('.displaySection').append('<audio id="'+questions[currentQuestion].song+'" controls src="' + questions[currentQuestion].file + '"></audio>');		
+	musicTag="#"+questions[currentQuestion].song+"";
     console.log(musicTag);
     songPlayer(musicTag);
-	for(var i = 0; i < questions[0].choices.length; i++)
+	for(var i = 0; i < questions[currentQuestion].choices.length; i++)
 		{
 	        //console.log("DEBUG:the option "+questions[0].choices[i]+" compared with "+questions[0].correct+"will be "+(questions[0].choices[i]==questions[0].correct)+" ");
 	        bstatus="INCORRECT";
-	        if (questions[0].choices[i]==questions[0].correct)
+	        if (questions[currentQuestion].choices[i]==questions[currentQuestion].correct)
 	        {bstatus="CORRECT"  }
 	        else {bstatus="INCORRECT"};
 	        $('.choicesSection')
 	        .find('ul')
-	        .prepend('<li><button class="bigbutton" id="'+bstatus+'">' + questions[0].choices[i] + '</button></li>')		
+	        .prepend('<li><button class="bigbutton" id="'+bstatus+'">' + questions[currentQuestion].choices[i] + '</button></li>')		
 	    };
 	$(".choicesSection").css("display", "inline");
 	}
 
 
 function Prize() {
-	//$('#messageBox').css("display", "none");
-	//$('#messageBox').text('CORRECTOU!!!').fadeIn(3000);
+	$('#messageBox2').text('CORRECTOU!!!');
+	$('#prizeMessage strong').text('You have won a new record!!');
 	$(".choicesSection").css("display", "none");//perhaps can be deleted
 	$("#prizeHolder li").remove(); //Removes old prize
 	//prize will only change, so image displayed will be generic from class recordPrize
-	$('#prizeHolder').append('<li><div class="recordPrize"></div><div class="prizeContainer"><h2 class="detailPrize"><strong>SONG:</strong>' + questions[0].correctSong + '</h2><h2 class="detailPrize"><strong>ARTIST:</strong>' + questions[0].correctArtist + '</h2></div></li>');
-	$('.recordPrize').css("background-image", questions[0].prize);
+	$('#prizeHolder').append('<li><div class="recordPrize" id="uniqueRecordPrize"></div><div class="prizeContainer"><h2 class="detailPrize"><strong>SONG:</strong>' + questions[currentQuestion].correctSong + '</h2><h2 class="detailPrize"><strong>ARTIST:</strong>' + questions[currentQuestion].correctArtist + '</h2></div></li>');
+	$('#uniqueRecordPrize').css("background-image", questions[currentQuestion].prize);
 	$('.prizeSection').css("display", "block");
 	$("#bandPic").css("display", "none");
-	$("#bandPic").css("background-image", questions[0].image).fadeIn(3000);
+	$("#bandPic").css("background-image", questions[currentQuestion].image).fadeIn(3000);
 	$('.displaySection audio').remove();
 		//$('.collectionSection').find('ul li').remove();
 
 	//collections will change and be stored for further references, so a unique id is built for each div
-	$('.collectionSection').find('ul').append('<li><div class="recordPrize" id="prize'+questions[0].song+'"></div><div class="prizeContainer"><h2 class="detailPrize"><strong>SONG:</strong>' + questions[0].correctSong + '</h2><h2 class="detailPrize"><strong>ARTIST:</strong>' + questions[0].correctArtist + '</h2></div></li>');
-	$('#prize'+questions[0].song+'').css("background-image", questions[0].prize);
+	$('.collectionSection').find('ul').append('<li><div class="recordPrize" id="prize'+questions[currentQuestion].song+'"></div><div class="prizeContainer"><h2 class="detailPrize"><strong>SONG:</strong>' + questions[currentQuestion].correctSong + '</h2><h2 class="detailPrize"><strong>ARTIST:</strong>' + questions[currentQuestion].correctArtist + '</h2></div></li>');
+	$('#prize'+questions[currentQuestion].song+'').css("background-image", questions[currentQuestion].prize);
 	//$('.collectionSection').fadeIn(3000);
 }
+
+function Wrong() {
+
+	$('#messageBox2').text('NOPE');
+	$('#prizeMessage strong').text('NOPE');
+	$(".choicesSection").css("display", "none");//perhaps can be deleted
+	$("#prizeHolder li").remove(); //Removes old prize
+	//prize will only change, so image displayed will be generic from class recordPrize
+	//$('#prizeHolder').append('<li><div class="recordPrize"></div><div class="prizeContainer"><h2 class="detailPrize"><strong>SONG:</strong>' + questions[currentQuestion].correctSong + '</h2><h2 class="detailPrize"><strong>ARTIST:</strong>' + questions[currentQuestion].correctArtist + '</h2></div></li>');
+	//$('.recordPrize').css("background-image", questions[currentQuestion].prize);
+	$('.prizeSection').css("display", "block");
+	$("#bandPic").css("display", "none");
+	$("#bandPic").css("background-image", questions[currentQuestion].image).fadeIn(3000);
+	$('.displaySection audio').remove();
+	}
 
 $(document).ready(function() {
 //actions that happen immediately after document is loaded
@@ -93,14 +114,22 @@ $("#mjButtons").on("click", "#playbutton", function () {
 
 //GameNEXT Listener 
 $(".prizeSection").on("click", "#nextButton", function () {
-        numberCorrect = 0;
-        currentQuestion += 1;
-        console.log("current question is now"+currentQuestion);
-        //Show collection
-        $('.collectionSection').fadeIn(3000);
-        
-        //update question info
-        update();
+        if(currentQuestion<4) {
+	        currentQuestion += 1;
+	        console.log("current question is now"+currentQuestion);
+	        //Show collection
+	        $('.collectionSection').fadeIn(3000);
+	       	//update question info
+	        update();
+        }
+        else {
+        	$(".prizeSection").css("display", "none");
+        	$(".choicesSection").css("display", "none");
+        	$("#recordPlayer").css("display", "none");
+        	//Show collection
+        	$('#messageBox').text('END: YOUR FINAL SCORE IS!!!');
+	        $('.collectionSection').fadeIn(3000);
+        }
     });
 //CorrectAnswer Listener
 $(".choicesSection").on("click", "#CORRECT", function () {
@@ -110,7 +139,17 @@ $(".choicesSection").on("click", "#CORRECT", function () {
         //run Reward Program
         Prize();
     });
+//WrongAnswer Listener
+$(".choicesSection").on("click", "#INCORRECT", function () {
+     
+        console.log("the answer is incorrect. Total correct answers so far are : "+numberCorrect);
+        //run Reward Program
+        Wrong();
+    });
 });
+
+
+
 
 
 function songPlayer (tag) {
