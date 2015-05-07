@@ -25,6 +25,9 @@ function update() {
 	$(".choicesSection ul li").remove();
 	$('.displaySection audio').remove();
 	$('.displaySection').append('<audio id="'+questions[0].song+'" controls src="' + questions[0].file + '"></audio>');		
+	musicTag="#"+questions[0].song+"";
+    console.log(musicTag);
+    songPlayer(musicTag);
 	for(var i = 0; i < questions[0].choices.length; i++)
 		{
 	        //console.log("DEBUG:the option "+questions[0].choices[i]+" compared with "+questions[0].correct+"will be "+(questions[0].choices[i]==questions[0].correct)+" ");
@@ -36,27 +39,28 @@ function update() {
 	        .find('ul')
 	        .prepend('<li><button class="bigbutton" id="'+bstatus+'">' + questions[0].choices[i] + '</button></li>')		
 	    };
+	$(".choicesSection").css("display", "inline");
 	}
 
 
 function Prize() {
-	$('#messageBox').css("display", "none");
-	$('#messageBox').text('CORRECTOU!!!').fadeIn(3000);
-	$("#recordPlayer").css("display", "none");
-	$("#recordPlayer").css("background-image", questions[0].image).fadeIn(3000);
-	$('.displaySection audio').remove();
-	$(".choicesSection").css("display", "none");
-	//$('.collectionSection').find('ul li').remove();
-	$("#prizeHolder li").remove();
+	//$('#messageBox').css("display", "none");
+	//$('#messageBox').text('CORRECTOU!!!').fadeIn(3000);
+	$(".choicesSection").css("display", "none");//perhaps can be deleted
+	$("#prizeHolder li").remove(); //Removes old prize
 	//prize will only change, so image displayed will be generic from class recordPrize
 	$('#prizeHolder').append('<li><div class="recordPrize"></div><div class="prizeContainer"><h2 class="detailPrize"><strong>SONG:</strong>' + questions[0].correctSong + '</h2><h2 class="detailPrize"><strong>ARTIST:</strong>' + questions[0].correctArtist + '</h2></div></li>');
 	$('.recordPrize').css("background-image", questions[0].prize);
-	$('.prizeSection').fadeIn(3000);
+	$('.prizeSection').css("display", "block");
+	$("#bandPic").css("display", "none");
+	$("#bandPic").css("background-image", questions[0].image).fadeIn(3000);
+	$('.displaySection audio').remove();
+		//$('.collectionSection').find('ul li').remove();
+
 	//collections will change and be stored for further references, so a unique id is built for each div
 	$('.collectionSection').find('ul').append('<li><div class="recordPrize" id="prize'+questions[0].song+'"></div><div class="prizeContainer"><h2 class="detailPrize"><strong>SONG:</strong>' + questions[0].correctSong + '</h2><h2 class="detailPrize"><strong>ARTIST:</strong>' + questions[0].correctArtist + '</h2></div></li>');
 	$('#prize'+questions[0].song+'').css("background-image", questions[0].prize);
-
-	$('.collectionSection').fadeIn(3000);
+	//$('.collectionSection').fadeIn(3000);
 }
 
 $(document).ready(function() {
@@ -71,23 +75,33 @@ $('#instructionsbutton')
 	.click(function(){
     	$("#MJinstructions").toggle();})
 
-//GameStart Listener
+//GameStart Listener 
 $("#mjButtons").on("click", "#playbutton", function () {
-        //set the counters
+        $("#playbutton").fadeOut(2000);
+        $("#diffbutton").fadeOut(2000);
+        //set the counters to zero
         numberCorrect = 0;
         currentQuestion = 0;
-        //remove previous game traits
-        $(".choicesSection").css("display", "inline");
+
         //update question info
         update();
-        musicTag="#"+questions[0].song+"";
-        console.log(musicTag);
-        songPlayer(musicTag);
+
         //var newQuestion = '<span class="question">'+questions[currentQuestion].question+'</span><br><div id="answer_holder"><input type="radio" name="option" class="option" value="0"><span class="answer">'+questions[currentQuestion].choices[0]+'</span><br><input type="radio" name="option" class="option" value="1"><span class="answer">'+questions[currentQuestion].choices[1]+'</span><br><input type="radio" name="option" class="option" value="2"><span class="answer">'+questions[currentQuestion].choices[2]+'</span><br><input type="radio" name="option" class="option" value="3"><span class="answer">'+questions[currentQuestion].choices[3]+'</span><br></div><div id="button_holder"><input type="button" id="submit" value="Submit Answer"><span id="hint"></span><input type="button" id="retry_button" value="Try Again!"></div>';
         //$("#question_wrapper").html(newQuestion);
         //$("#last_question_fact").html("");
     });
 
+//GameNEXT Listener 
+$(".prizeSection").on("click", "#nextButton", function () {
+        numberCorrect = 0;
+        currentQuestion += 1;
+        console.log("current question is now"+currentQuestion);
+        //Show collection
+        $('.collectionSection').fadeIn(3000);
+        
+        //update question info
+        update();
+    });
 //CorrectAnswer Listener
 $(".choicesSection").on("click", "#CORRECT", function () {
         //set the counters

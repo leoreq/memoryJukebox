@@ -11,7 +11,7 @@ html {
 body {
   position: absolute;
   width: 90%;
-  min-height: 96%;
+  min-height: 110%;
   margin: 1em 3em;
   padding-top: 2em;
   background-color: #fff;
@@ -23,6 +23,7 @@ body {
   -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  z-index:1000;
 }
 
 /*Start adding the game instruction styles*/
@@ -80,11 +81,13 @@ strong {
   margin-right: auto;
   margin-top: 2em;
   margin-bottom: 1em;
-  z-index:1001;
+  z-index:1010;
   position: relative;
 }
 
-
+.mjButtons {
+  height:2em;
+}
 .bigbutton {
   margin-top: 1.25rem;
   background-color: #A60015;
@@ -105,13 +108,15 @@ strong {
   width: 20%;
 }
 #playbutton{
+  z-index:900;
+  position: relative;
   width: 50%;
 }
 #diffbutton {
   width: 20%;
 }
 /*This will contain styles for Display Section*/
-#messageBox {
+#messageBox ,#messageBox2{
   font-size: 3em;
   font-family: 'Shadows Into Light', cursive;
   margin:2em;
@@ -146,15 +151,43 @@ strong {
 }
 
 /*This will contain the stryles for the Collection Section*/
+.collectionSection ,.prizeSection {
+  height:100%;
+  display:none;
+}
+.prizeSection {
+  margin-top: -2em;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-color: #fff;
+  z-index:1005;
+}
+#messageBox2{
+  margin-top:8em;
+}
+
+#prizeMessage {
+  margin-top:1em;
+}
+
+#bandPic {
+  background-image: url('../images/player.JPG');
+  height: 31em;
+  background-repeat: no-repeat;
+  background-size:contain;
+  max-width: 38em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
 #recordHolder, #prizeHolder{
   max-width: 41em;
   margin-left: auto;
   margin-right: auto;
 }
-.collectionSection ,.prizeSection {
-  height:100%;
-  display:none;
-}
+
 .recordPrize {
   background-image: url('../images/recordRHCP.JPG');
   float:left;
@@ -164,6 +197,7 @@ strong {
   width: 34%;
   margin: 1em 2em;
 }
+
 .prizeContainer {
   float:right;
   height: 22em;
@@ -176,6 +210,10 @@ strong {
   line-height: 1.3em;
   text-align: left;
   color: #A60015;
+}
+
+#nextButton {
+  margin-top:-1.5em;
 }
 /* old code for help
 
